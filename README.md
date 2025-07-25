@@ -36,6 +36,135 @@
 
 ComfyUI lets you design and execute advanced stable diffusion pipelines using a graph/nodes/flowchart based interface. Available on Windows, Linux, and macOS.
 
+---
+
+# 🔧 Custom Installation & Utilities
+
+This repository includes several custom scripts and utilities for enhanced ComfyUI setup and usage.
+
+## 📦 Installation Scripts
+
+### `install.bat` - Automated Installation
+**Comprehensive installation script with Python 3.12 enforcement and error handling**
+
+Features:
+- **Python 3.12 enforcement**: Automatically detects, creates, or recreates virtual environment with Python 3.12
+- **Automatic Python installation**: Uses winget to install Python 3.12 if not found
+- **Smart PyTorch installation**: Tries stable PyTorch first (CUDA 12.1), falls back to nightly (CUDA 12.4)
+- **Requirements handling**: Installs critical packages individually with error tolerance
+- **Virtual environment management**: Creates/activates venv, handles version conflicts
+
+Usage: `install.bat`
+
+### `fix_pytorch.bat` - PyTorch Problem Solver
+**Fixes PyTorch CUDA issues by reinstalling stable version**
+
+- Uninstalls problematic nightly PyTorch
+- Installs stable PyTorch with CUDA 12.1 support
+- Tests CUDA availability after installation
+
+Usage: `fix_pytorch.bat`
+
+### `run.bat` - ComfyUI Launcher
+**Simple launcher with environment validation**
+
+- Checks for virtual environment existence
+- Activates venv and launches ComfyUI
+- Provides error feedback and keeps terminal open
+
+Usage: `run.bat`
+
+### `install_custom_node.bat` - Custom Node Manager
+**Interactive custom node installer with dependency handling**
+
+Features:
+- **Git repository cloning**: Clone any ComfyUI custom node from Git URL
+- **Dependency management**: Automatically installs requirements.txt if present
+- **Multi-installation support**: Install multiple nodes in one session
+- **Overwrite protection**: Handles existing installations safely
+- **Error handling**: Graceful failure handling with user feedback
+
+Usage: `install_custom_node.bat`
+
+## 🎨 UI Customizations
+
+### Square Nodes Extension
+**Remove rounded corners from all nodes for a cleaner, box-style appearance**
+
+Files created:
+- `custom_nodes/square_nodes_extension.py` - Python backend
+- `custom_nodes/web/square_nodes.js` - JavaScript frontend  
+- `web/square_nodes.css` - CSS styling
+- `enable_square_nodes.js` - Browser console script
+
+**Quick Apply (Browser Console Method):**
+1. Open ComfyUI in browser
+2. Press F12 → Console tab
+3. Paste contents of `enable_square_nodes.js`
+4. Press Enter
+
+**Permanent Apply:**
+- Extensions auto-load on ComfyUI restart
+- Affects all node types (regular, group, selected nodes)
+
+## 🔧 Development Files
+
+### `CLAUDE.md` - AI Assistant Guide
+**Comprehensive development guide for AI assistants working with this codebase**
+
+Contains:
+- Essential development commands (run, test, lint)
+- Architecture overview and component structure
+- Common development patterns and practices
+- Directory structure explanation
+
+### Missing `__init__.py` Files
+**Fixed Python package imports by adding missing `__init__.py` files:**
+- `comfy/__init__.py`
+- `comfy/k_diffusion/__init__.py` 
+- `comfy/extra_samplers/__init__.py`
+- `comfy/cldm/__init__.py`
+
+## 🚀 Quick Start Guide
+
+1. **Initial Setup:**
+   ```bash
+   install.bat
+   ```
+
+2. **Run ComfyUI:**
+   ```bash
+   run.bat
+   ```
+
+3. **Install Custom Nodes:**
+   ```bash
+   install_custom_node.bat
+   ```
+
+4. **Apply Square Nodes (Optional):**
+   - Use browser console method with `enable_square_nodes.js`
+   - Or restart ComfyUI to auto-load extensions
+
+## 🛠️ System Requirements
+
+- **Python**: Auto-installs Python 3.12 via winget
+- **CUDA**: Supports CUDA 12.1 (stable) and 12.4 (nightly)
+- **GPU**: Optimized for NVIDIA RTX series (tested on RTX 4090)
+- **OS**: Windows with winget support
+
+## 📝 Notes
+
+- All batch files include comprehensive error handling
+- Virtual environment is enforced to use Python 3.12 specifically
+- PyTorch installation prioritizes stability over bleeding-edge features
+- Custom node system supports standard ComfyUI node development patterns
+- UI customizations are non-destructive and can be easily reverted
+
+---
+
+# 📖 Original ComfyUI Documentation
+
 ## Get Started
 
 #### [Desktop Application](https://www.comfy.org/download)

@@ -1,0 +1,69 @@
+/* ComfyUI Square Nodes Extension - Override LiteGraph rounded corners */
+
+/* Main node styling */
+.litegraph .lgraphnode {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}
+
+/* Node title area */
+.litegraph .lgraphnode .title {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+/* Node content area */
+.litegraph .lgraphnode .content {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+/* Node widgets */
+.litegraph .lgraphnode .widget {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}
+
+/* Input/Output slots */
+.litegraph .lgraphnode .slot,
+.litegraph .lgraphnode .slot_input,
+.litegraph .lgraphnode .slot_output,
+.litegraph .lgraphnode .node_slot {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}
+
+/* Selected nodes */
+.litegraph .lgraphnode.selected {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}
+
+/* Group nodes */
+.litegraph .lgraphgroup {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}
+
+/* Canvas-level variable override */
+.litegraph canvas {
+    --node-border-radius: 0px !important;
+}
+
+/* Additional overrides for any missed elements */
+.litegraph .lgraphnode * {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}

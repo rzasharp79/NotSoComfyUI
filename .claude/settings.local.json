@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(py:*)",
+      "Bash(nvidia-smi:*)",
+      "Bash(call venvScriptsactivate.bat)",
+      "Bash(pip uninstall:*)",
+      "Bash(venvScriptsactivate.bat)",
+      "Bash(find:*)",
+      "Bash(mkdir:*)"
+    ],
+    "deny": []
+  }
+}
